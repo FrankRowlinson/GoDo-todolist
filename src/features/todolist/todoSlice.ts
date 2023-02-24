@@ -2,14 +2,6 @@ import { createSlice } from "@reduxjs/toolkit"
 import { addTodo, fetchTodos } from "./todoThunks"
 import { RootState } from "../../app/store"
 
-export interface ITodo {
-  id: string
-  name: string
-  createdAt: Date
-  favourite: boolean
-  status: "undone" | "wip" | "done"
-}
-
 export interface ITodoState {
   todos: ITodo[]
   status: "idle" | "loading" | "error"

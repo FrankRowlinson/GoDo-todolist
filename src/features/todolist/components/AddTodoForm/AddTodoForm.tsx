@@ -4,6 +4,7 @@ import { PlusIcon } from "../../../icons"
 import { addTodo } from "../../todoThunks"
 import { useState } from "react"
 import "./AddTodoForm.css"
+import { validateTodoName } from "./utils"
 
 export function AddTodoForm() {
   const dispatch = useAppDispatch()
@@ -14,13 +15,7 @@ export function AddTodoForm() {
   const handleChange = (event: React.FormEvent<HTMLInputElement>): void => {
     const value = event.currentTarget.value
     setTodoName(value)
-    if (value.length === 0 && isSubmitted) {
-      setError("Нельзя добавлять пустые задачи")
-    } else if (value.length > 160) {
-      setError(`Лимит символов в названии превышен на ${value.length - 160}`)
-    } else {
-      setError("")
-    }
+    setError(validateTodoName(value, isSubmitted))
   }
 
   const handleSubmit = (event: React.FormEvent): void => {

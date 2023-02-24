@@ -1,3 +1,11 @@
+interface ITodo {
+  id: string
+  name: string
+  createdAt: Date
+  favourite: boolean
+  status: "undone" | "wip" | "done"
+}
+
 interface IInputProps {
   id: string
   name: string
