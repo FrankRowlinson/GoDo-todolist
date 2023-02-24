@@ -1,0 +1,50 @@
+.btn {
+  position: relative;
+  top: 4px;
+  border-radius: 8px;
+  margin: 10px 6px;
+  border: 0;
+  padding: 10px 16px;
+  color: #fffbeb;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.04s linear;
+}
+
+.btn:active {
+  top: 8px;
+}
+
+.btn.primary {
+  background-color: #4274d7;
+  box-shadow: 0 0 0 1px #417fbd inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset,
+    0 4px 0 0 #4d5bbe, 0 4px 8px 1px rgba(0, 0, 0, 0.5);
+}
+
+.btn.primary:active {
+  box-shadow: 0 0 0 1px #417fbd inset, 0 0 0 1px rgba(255, 255, 255, 0.15) inset,
+    0 1px 3px 1px rgba(0, 0, 0, 0.3);
+}
+
+.btn.success {
+  background-color: #78d739;
+  box-shadow: 0 0 0 1px #31c300 inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset,
+    0 4px 0 0 #4e9c1e, 0 4px 8px 1px rgba(0, 0, 0, 0.5);
+}
+
+.btn.success:active {
+  box-shadow: 0 0 0 1px #30cd00 inset, 0 0 0 1px rgba(255, 255, 255, 0.15) inset,
+    0 1px 3px 1px rgba(0, 0, 0, 0.3);
+}
+
+.btn.danger {
+  background-color: #d73814;
+  box-shadow: 0 0 0 1px #b93802 inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset,
+    0 4px 0 0 #aa0000, 0 4px 8px 1px rgba(0, 0, 0, 0.5);
+}
+
+.btn.danger:active {
+  box-shadow: 0 0 0 1px #b93802 inset, 0 0 0 1px rgba(255, 255, 255, 0.15) inset,
+    0 1px 3px 1px rgba(0, 0, 0, 0.3);
+}

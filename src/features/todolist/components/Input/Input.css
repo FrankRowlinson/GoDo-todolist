@@ -1,0 +1,37 @@
+.input-container {
+  display: inline;
+  position: relative;
+}
+
+input[type="text"] {
+  margin: 10px 2px;
+  border-radius: 8px;
+  padding: 10px;
+  background: #fffbeb;
+  color: #18122b;
+  font-weight: 600;
+  font-size: 16px;
+  border: none;
+  box-shadow: 0 4px 0 0 #635985, 0 4px 8px 1px rgba(0, 0, 0, 0.5);
+}
+
+input[type="text"]:focus {
+  outline: none;
+}
+
+.error input[type="text"] {
+  box-shadow: 0 0 3px 2px #ff0000, 0 4px 0 0 #ce0000,
+    0 4px 8px 1px rgba(0, 0, 0, 0.5);
+}
+
+input[type="text"] + label {
+  position: absolute;
+  top: 36px;
+  left: 5px;
+  font-size: 12px;
+  font-weight: 300;
+}
+
+.error label {
+  color: #ff0000;
+}
