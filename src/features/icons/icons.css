@@ -27,3 +27,7 @@
 .icon-container.star * {
   color: gold;
 }
+
+.icon-container.menu * {
+  color: #fffbeb;
+}
