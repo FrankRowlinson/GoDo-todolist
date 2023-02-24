@@ -4,7 +4,7 @@ import { RootState } from "../../app/store"
 
 export interface ITodoState {
   todos: ITodo[]
-  status: "idle" | "loading" | "error"
+  status: "idle" | "loading" | "error" | "post-loading"
 }
 
 const initialState: ITodoState = {
@@ -19,10 +19,14 @@ const todoSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(addTodo.fulfilled, (state, action) => {
+        state.status = "idle"
         state.todos.push(action.payload)
       })
       .addCase(addTodo.rejected, (state) => {
         state.status = "error"
+      })
+      .addCase(addTodo.pending, (state) => {
+        state.status = "post-loading"
       })
       .addCase(fetchTodos.fulfilled, (state, action) => {
         state.status = "idle"

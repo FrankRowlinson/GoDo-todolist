@@ -1,16 +1,18 @@
 import { Button, Input } from "../"
-import { useAppDispatch } from "../../../../app/hooks"
+import { useAppDispatch, useAppSelector } from "../../../../app/hooks"
 import { PlusIcon } from "../../../icons"
 import { addTodo } from "../../todoThunks"
 import { useState } from "react"
 import "./AddTodoForm.css"
 import { validateTodoName } from "./utils"
+import { selectStatus } from "./../../todoSlice"
 
 export function AddTodoForm() {
   const dispatch = useAppDispatch()
   const [todoName, setTodoName] = useState<string>("")
   const [error, setError] = useState<string>("")
   const [isSubmitted, setIsSubmitted] = useState<boolean>(false)
+  const status = useAppSelector(selectStatus)
 
   const handleChange = (event: React.FormEvent<HTMLInputElement>): void => {
     const value = event.currentTarget.value
@@ -42,7 +44,11 @@ export function AddTodoForm() {
         placeholder='Что нужно сделать?'
         label={error}
       />
-      <Button variant='success' label={<PlusIcon size='sm' />} />
+      <Button
+        variant='success'
+        label={<PlusIcon size='sm' />}
+        disabled={status === "post-loading"}
+      />
     </form>
   )
 }

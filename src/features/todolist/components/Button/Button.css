@@ -1,4 +1,19 @@
-.btn {
+.btn-icon {
+  cursor: pointer;
+  transition: all 0.04s linear;
+  background: transparent;
+  border: none;
+  border-radius: 3px;
+  padding: 1px 3px;
+  outline: 0;
+}
+
+.btn-icon:hover {
+  outline: 2px solid rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.btn3D {
   position: relative;
   top: 4px;
   border-radius: 8px;
@@ -12,39 +27,46 @@
   transition: all 0.04s linear;
 }
 
-.btn:active {
+.btn3D:active {
   top: 8px;
 }
 
-.btn.primary {
+.btn3D.primary {
   background-color: #4274d7;
   box-shadow: 0 0 0 1px #417fbd inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset,
     0 4px 0 0 #4d5bbe, 0 4px 8px 1px rgba(0, 0, 0, 0.5);
 }
 
-.btn.primary:active {
+.btn3D.primary:active {
   box-shadow: 0 0 0 1px #417fbd inset, 0 0 0 1px rgba(255, 255, 255, 0.15) inset,
     0 1px 3px 1px rgba(0, 0, 0, 0.3);
 }
 
-.btn.success {
+.btn3D.success {
   background-color: #78d739;
   box-shadow: 0 0 0 1px #31c300 inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset,
     0 4px 0 0 #4e9c1e, 0 4px 8px 1px rgba(0, 0, 0, 0.5);
 }
 
-.btn.success:active {
+.btn3D.success:active {
   box-shadow: 0 0 0 1px #30cd00 inset, 0 0 0 1px rgba(255, 255, 255, 0.15) inset,
     0 1px 3px 1px rgba(0, 0, 0, 0.3);
 }
 
-.btn.danger {
+.btn3D.danger {
   background-color: #d73814;
   box-shadow: 0 0 0 1px #b93802 inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset,
     0 4px 0 0 #aa0000, 0 4px 8px 1px rgba(0, 0, 0, 0.5);
 }
 
-.btn.danger:active {
+.btn3D.danger:active {
   box-shadow: 0 0 0 1px #b93802 inset, 0 0 0 1px rgba(255, 255, 255, 0.15) inset,
     0 1px 3px 1px rgba(0, 0, 0, 0.3);
+}
+
+.btn3D:disabled {
+  color: #dbdbdb;
+  box-shadow: 0 0 0 1px #838383 inset, 0 0 0 2px rgba(255, 255, 255, 0.1) inset,
+    0 4px 0 0 #979797, 0 4px 8px 1px rgba(0, 0, 0, 0.2);
+  background-color: #828282;
 }

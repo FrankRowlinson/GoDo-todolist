@@ -1,4 +1,5 @@
 import { MenuIcon, StarIcon } from "../../../icons"
+import { Button } from "../"
 import "./Todo.css"
 
 interface ITodoProps extends ITodo {}
@@ -9,10 +10,10 @@ export function Todo({ id, name, status, favourite, createdAt }: ITodoProps) {
       <div className='todo-info'>
         {name}
         <span className='wip'>{status === "wip" && "[В работе]"}</span>
-        {favourite && <StarIcon size='sm' />}
+        {favourite && <Button label={<StarIcon size='sm' />} variant='icon' />}
       </div>
       <div className='menu'>
-        <MenuIcon size='md' />
+        <Button label={<MenuIcon size='md' />} variant='icon' />
       </div>
     </div>
   )
