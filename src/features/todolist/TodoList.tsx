@@ -45,6 +45,7 @@ export function TodoList() {
   return (
     <div className='todolist-container paper'>
       <AddTodoForm />
+      <h1 className='list-header'>Список дел</h1>
       <div className='filter-buttons'>
         <RadioButton
           id='wip-filter'
@@ -76,13 +77,14 @@ export function TodoList() {
           onClick={handleFilterReset}
         />
       </div>
-      {!!todos.length && (
+      {todos.length ? (
         <List>
-          <h1 className='list-header'>Список дел</h1>
           {filteredTodos.map((el) => {
             return <Todo key={el.id} {...el} />
           })}
         </List>
+      ) : (
+        <div className='empty-list'>Список пуст</div>
       )}
     </div>
   )
