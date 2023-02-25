@@ -76,11 +76,14 @@ export function TodoList() {
           onClick={handleFilterReset}
         />
       </div>
-      <List>
-        {filteredTodos.map((el) => {
-          return <Todo key={el.id} {...el} />
-        })}
-      </List>
+      {!!todos.length && (
+        <List>
+          <h1 className='list-header'>Список дел</h1>
+          {filteredTodos.map((el) => {
+            return <Todo key={el.id} {...el} />
+          })}
+        </List>
+      )}
     </div>
   )
 }

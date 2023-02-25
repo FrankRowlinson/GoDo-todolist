@@ -23,10 +23,11 @@
   color: #fffbeb;
   padding: 8px 10px;
   cursor: pointer;
+  width: 100%;
 }
 
 .todo-menu__option:hover {
-  text-decoration: underline;
+  background: #393053;
 }
 
 .todo-name {

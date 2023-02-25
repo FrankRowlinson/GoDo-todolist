@@ -1,10 +1,15 @@
 .single-todo {
-  padding: 6px;
+  padding: 6px 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin: 0;
+  border-radius: 10px;
   transition: all 0.2s linear;
+}
+
+.single-todo:hover {
+  background: #443c68;
 }
 
 .single-todo .input-container {
@@ -12,8 +17,13 @@
   top: auto;
 }
 
+.single-todo .input-container label {
+  top: 36px;
+}
+
 .single-todo.edit {
   margin: 20px 0;
+  padding: 6px 6px 10px 6px;
 }
 
 .todo-info {
