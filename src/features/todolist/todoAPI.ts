@@ -7,7 +7,7 @@ const addTodo = async (todoName: string) => {
       name: todoName,
       createdAt: Date.now(),
       favourite: false,
-      status: "undone",
+      status: "wip",
     }),
     headers: {
       "Content-Type": "application/json",
@@ -21,5 +21,25 @@ const fetchTodos = async () => {
   return response.json()
 }
 
-const todoAPI = { addTodo, fetchTodos }
+const deleteTodo = async (todoId: string) => {
+  const response = await fetch(`${todos}/${todoId}`, {
+    method: "DELETE",
+  })
+  return response.json()
+}
+
+const updateTodo = async (todo: ITodo) => {
+  const response = await fetch(`${todos}/${todo.id}`, {
+    method: "PUT",
+    body: JSON.stringify({
+      ...todo,
+    }),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  })
+  return response.json()
+}
+
+const todoAPI = { addTodo, fetchTodos, updateTodo, deleteTodo }
 export default todoAPI

@@ -3,7 +3,7 @@ interface ITodo {
   name: string
   createdAt: Date
   favourite: boolean
-  status: "undone" | "wip" | "done"
+  status: "wip" | "done"
 }
 
 interface IInputProps {
@@ -13,4 +13,5 @@ interface IInputProps {
   value?: string
   onChange?: (event: React.FormEvent<HTMLInputElement>) => void
   placeholder?: string
+  ref?: React.Ref
 }

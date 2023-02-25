@@ -18,3 +18,16 @@ export const filterTodos = (todos: ITodo[], filter: TodoFilter): ITodo[] => {
 export const isChecked = (value: string, filter: TodoFilter): boolean => {
   return value === filter
 }
+
+export const validateTodoName = (
+  todoName: string,
+  isSubmitted: boolean
+): string => {
+  if (todoName.length === 0 && isSubmitted) {
+    return "Имя задачи не может быть пустым"
+  } else if (todoName.length > 160) {
+    return `Лимит символов в названии превышен на ${todoName.length - 160}`
+  } else {
+    return ""
+  }
+}

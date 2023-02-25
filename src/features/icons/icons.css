@@ -26,6 +26,7 @@
 
 .icon-container.star * {
   color: gold;
+  border-radius: 50%;
 }
 
 .icon-container.menu * {

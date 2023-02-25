@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit"
-import { addTodo, fetchTodos } from "./todoThunks"
+import { addTodo, deleteTodo, fetchTodos, updateTodo } from "./todoThunks"
 import { RootState } from "../../app/store"
 
 export interface ITodoState {
@@ -32,11 +32,36 @@ const todoSlice = createSlice({
         state.status = "idle"
         state.todos = action.payload
       })
-      .addCase(fetchTodos.rejected, (state, action) => {
+      .addCase(fetchTodos.rejected, (state) => {
         state.status = "error"
       })
       .addCase(fetchTodos.pending, (state) => {
         state.status = "loading"
+      })
+      .addCase(updateTodo.pending, (state) => {
+        state.status = "post-loading"
+      })
+      .addCase(updateTodo.rejected, (state) => {
+        state.status = "error"
+      })
+      .addCase(updateTodo.fulfilled, (state, action) => {
+        const todo = action.payload
+        const todoIndex = state.todos.findIndex(
+          (prevTodo) => prevTodo.id === todo.id
+        )
+        state.status = "idle"
+        state.todos[todoIndex] = todo
+      })
+      .addCase(deleteTodo.pending, (state) => {
+        state.status = "post-loading"
+      })
+      .addCase(deleteTodo.rejected, (state) => {
+        state.status = "error"
+      })
+      .addCase(deleteTodo.fulfilled, (state, action) => {
+        const { id } = action.payload
+        state.status = "idle"
+        state.todos = state.todos.filter((todo) => todo.id !== id)
       })
   },
 })

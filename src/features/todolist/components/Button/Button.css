@@ -1,16 +1,17 @@
 .btn-icon {
   cursor: pointer;
   transition: all 0.04s linear;
+  margin-left: 10px;
   background: transparent;
   border: none;
   border-radius: 3px;
-  padding: 1px 3px;
+  padding: 2px 3px;
   outline: 0;
 }
 
 .btn-icon:hover {
-  outline: 2px solid rgba(0, 0, 0, 0.3);
-  background: rgba(0, 0, 0, 0.1);
+  outline: 2px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.1);
 }
 
 .btn3D {

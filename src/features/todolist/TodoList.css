@@ -1,10 +1,17 @@
-.todolist-container {
+.paper {
   display: flex;
-  align-self: flex-start;
   flex-direction: column;
   border-radius: 8px;
-  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.3);
   background-color: #393053;
   padding: 10px 20px;
   margin: 10px auto;
+}
+
+.todolist-container {
+  align-self: flex-start;
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+.filter-buttons {
+  margin-left: -8px;
 }

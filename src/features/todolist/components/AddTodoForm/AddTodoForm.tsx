@@ -4,7 +4,7 @@ import { PlusIcon } from "../../../icons"
 import { addTodo } from "../../todoThunks"
 import { useState } from "react"
 import "./AddTodoForm.css"
-import { validateTodoName } from "./utils"
+import { validateTodoName } from "../../utils"
 import { selectStatus } from "./../../todoSlice"
 
 export function AddTodoForm() {

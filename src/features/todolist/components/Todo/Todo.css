@@ -3,10 +3,22 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin: 0;
+  transition: all 0.2s linear;
+}
+
+.single-todo .input-container {
+  margin: 0;
+  top: auto;
+}
+
+.single-todo.edit {
+  margin: 20px 0;
 }
 
 .todo-info {
   display: flex;
+  width: 100%;
 }
 
 .done {
@@ -14,8 +26,23 @@
   color: rgb(139, 139, 139);
 }
 
-.wip {
-  margin: 0 4px;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.7);
+.favourite-button {
+  border: none;
+  background: transparent;
+  box-shadow: 0;
+  margin-left: 5px;
+}
+
+.favourite-button .icon {
+  transition: 0.1s linear all;
+}
+
+.favourite-button:hover .icon {
+  box-shadow: 0 0px 3px 5px rgba(255, 223, 39, 0.3) inset,
+    0 0px 2px 4px rgba(255, 223, 39, 0.3);
+  filter: brightness(1.2);
+}
+
+.change-name-form {
+  width: 100%;
 }

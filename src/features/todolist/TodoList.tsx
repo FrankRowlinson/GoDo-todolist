@@ -43,7 +43,7 @@ export function TodoList() {
   }
 
   return (
-    <div className='todolist-container'>
+    <div className='todolist-container paper'>
       <AddTodoForm />
       <div className='filter-buttons'>
         <RadioButton

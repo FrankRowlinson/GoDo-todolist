@@ -1,5 +1,8 @@
 .addtodo-form {
-  margin-bottom: 5px;
   display: flex;
   width: 100%;
+}
+
+.addtodo-form.error {
+  margin-bottom: 5px;
 }

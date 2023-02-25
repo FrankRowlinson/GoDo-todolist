@@ -1,0 +1,38 @@
+.todo-menu-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.todo-menu {
+  background: #443c68;
+  position: absolute;
+  top: 24px;
+  right: 0;
+  z-index: 1;
+  box-shadow: 0 4px 8px 1px rgba(0, 0, 0, 0.5);
+  border-radius: 4px;
+}
+
+.todo-menu__option {
+  border: none;
+  background: transparent;
+  font-size: 14px;
+  font-weight: 600;
+  color: #fffbeb;
+  padding: 8px 10px;
+  cursor: pointer;
+}
+
+.todo-menu__option:hover {
+  text-decoration: underline;
+}
+
+.todo-name {
+  font-weight: 700;
+}
+
+.todo-date {
+  font-weight: 400;
+}
