@@ -74,7 +74,7 @@ export function TodoMenu({ editTodoName, ...todo }: ITodoMenuProps) {
             Вы действительно хотите удалить задачу{" "}
             <span className='todo-name'>"{name}"</span>? <br />
             <span className='todo-date'>
-              (создана {moment(createdAt).format("LLL")})
+              (добавлена {moment(createdAt).format("DD.MM.YY")})
             </span>
           </div>
         </Modal>

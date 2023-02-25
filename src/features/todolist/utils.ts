@@ -7,7 +7,7 @@ export const filterTodos = (todos: ITodo[], filter: TodoFilter): ITodo[] => {
     case "done":
       return todos.filter((todo) => todo.status === "done")
     case "favourite":
-      return todos.filter((todo) => todo.favourite)
+      return todos.filter((todo) => todo.favourite && todo.status === "wip")
     case "wip":
       return todos.filter((todo) => todo.status === "wip")
     default:
