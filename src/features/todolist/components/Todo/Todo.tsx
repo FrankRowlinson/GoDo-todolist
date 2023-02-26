@@ -39,7 +39,7 @@ export function Todo(todo: ITodo) {
               name={todo.name}
               value={name}
               onChange={onNameChange}
-              label={errorOnInput}
+              label={errorOnInput || "'Enter' чтобы сохранить"}
             />
           </form>
         ) : (

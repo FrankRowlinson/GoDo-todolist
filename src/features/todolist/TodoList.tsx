@@ -1,5 +1,5 @@
 import { useAppDispatch, useAppSelector } from "../../app/hooks"
-import { AddTodoForm, Button, List, RadioButton, Todo } from "./components"
+import { AddTodoForm, Button, RadioButton, Todo } from "./components"
 import "./TodoList.css"
 import { selectStatus, selectTodos } from "./todoSlice"
 import { useEffect, useState } from "react"
@@ -39,7 +39,12 @@ export function TodoList() {
   }
 
   if (status === "error") {
-    return <div>Error</div>
+    return (
+      <div>
+        На стороне сервера произошла ошибка. Обновите страницу, чтобы повторить
+        попытку
+      </div>
+    )
   }
 
   return (
@@ -78,11 +83,11 @@ export function TodoList() {
         />
       </div>
       {todos.length ? (
-        <List>
+        <>
           {filteredTodos.map((el) => {
             return <Todo key={el.id} {...el} />
           })}
-        </List>
+        </>
       ) : (
         <div className='empty-list'>Список пуст</div>
       )}
